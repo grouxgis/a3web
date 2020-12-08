@@ -1,0 +1,654 @@
+/* General design inspiration from https://levine.princeton.edu/ */
+
+/***********
+Owner: Corwan Groux
+Date: November 24, 2020
+***********/
+* {
+	box-sizing: border-box;
+}
+
+/* Taken from https://www.w3schools.com/css/css_rwd_grid.asp to ensure the columns for responsive design work properly */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Combined from https://www.w3schools.com/css/css_rwd_grid.asp and https://www.w3schools.com/css/css_rwd_mediaqueries.asp  */
+[class*="col-"] {
+  float: left;
+  padding: 10px;
+  width: 100%;
+}
+
+/* CSS for the About US section on the index page */
+.teamodd {
+	background-color: #f5f5f5; /* Alternating backgrounds for the odd-numbered team members */
+}
+.teamnames {
+	text-align: center;
+}
+
+.teampic {
+	border-radius: 5px;
+}
+
+details {
+	margin: 0pt;
+	padding-top: 10pt;
+	padding-bottom: 10pt;
+}
+
+details > summary {
+	font-size: 0.75em;
+}
+
+
+/* CSS for the Contact Info section */
+#contactinfosection {
+	margin: 0;
+}
+
+.contactinfo {
+	font-size: 11pt;
+}
+
+.googlemap {
+	width: 100%;
+	height: 100%;
+	max-width: 640px;
+	max-height: 432px;
+}
+
+/* CSS for the Services & Projects page */
+
+/* I learned about the CSS calc() function through a StackExchange discussion https://stackoverflow.com/questions/27256849/is-it-possible-to-use-vh-minus-pixels-in-a-css-calc, and also consulted Mozilla's developer article about it https://developer.mozilla.org/en-US/docs/Web/CSS/calc() */
+.quadrant {
+	position: relative;
+	height: calc((100vh - 97px) / 2); /* Sets the height to 50% of the viewport height minus the height of the header and footer elements so that the whole page is filled without creating a scroll bar*/
+	text-align: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	color: rgb(242, 242, 242);
+}
+
+#servicesremotesensing {
+	background-image: url("../images/remotesensingquadrant.jpg");
+}
+
+#servicestoolscripting {
+	background-image: url("../images/scriptingquadrant.JPG");
+	background-position: 0%; /* Because the code is left aligned, it makes sense to anchor the image on the left rather than the center */
+}
+
+#servicesspatialanalysis {
+	background-image: url("../images/spatialquadrant.JPG");
+	margin-top: 47px;
+}
+
+#servicescartography {
+	background-image: url("../images/cartographyquadrant.JPG");
+}
+
+div.quadrant > h1 {
+	background-color: rgba(170, 129, 69, 0.70);
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+/* The technique to position an element within its parent container with absolute position comes from https://css-tricks.com/absolute-positioning-inside-relative-positioning/ */
+div.quadrant > a {
+	display: block;
+	position: absolute;
+	top: 85%; /* Makes the placement of the link relative to the top of the div rather than the header above it for more consistent positioning across screen sizes */
+	width: 40%;
+	margin: 0px 30%;
+	color: rgb(242, 242, 242);
+	font-size: 14pt;
+	background-color: rgba(170, 129, 69, 0.70);
+	text-decoration: none;
+}
+
+div.quadrant > a:hover {
+	background-color: rgba(207, 202, 197, 0.66);
+}
+
+/* CSS for the Scripting page */
+.leftcol {
+	margin-left: 0%;
+	text-align: center;
+}
+
+.rightcol {
+	margin-right: 0%;
+	text-align: center;
+}
+
+.coltext {
+	margin-top: 0%;
+}
+
+/* The linear gradient was created with the help of this tutorial: https://webdevetc.com/blog/how-to-add-a-gradient-overlay-to-a-background-image-using-just-css-and-html/ */
+#scripting-header {
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url(../images/circuitboard.jpg);
+	min-height: 400px;
+	position: relative;
+}
+
+div#scripting-header > p {
+	position: absolute;
+	top: 370px;
+	margin-left: calc(100% - 260px);
+	text-align: right;
+	font-size: 10pt;
+	color: rgb(242, 242, 242);
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.scriptingpics {
+	width: 100%;
+	max-width: 550px;
+	display: block;
+	margin: auto;
+}
+
+#whalemappingcode {
+	width: 100%;
+	max-width: 900px;
+	display: block;
+	margin: auto;
+}
+
+/* I learned to use overflow: auto to create a scrollable image from http://tutorial.wickham43.com/imageswithascrollbar.php */
+#whalemapping {
+	margin: auto;
+	height: 75vh;
+	overflow: auto;
+	text-align: center;
+}
+
+#whalemappingbutton {
+	display: block;
+	background-color: rgb(78, 84, 90);
+	border: none;
+	border-radius: 5px;
+	margin: 1.5em auto;
+	padding: 0.5em;
+	font-size: 1em;
+	color: rgb(242, 242, 242);
+}
+/***********
+End Owner: Corwan Groux
+***********/
+
+/***********
+Owner: Andrea Reid
+Date: Nov 23, 2020
+***********/
+
+body {
+	font-family:"Verdana", Arial, sans-serif;
+	color: rgb(78, 84, 90);
+	margin: 0px;
+}	
+
+/* make header and navbar continuous with sections */
+
+.outer-margin {
+	padding: 0px;
+}
+
+
+/***********
+End Owner: Andrea Reid
+***********/
+
+/***********
+Owner: Kristine Luangkhot
+Date: November 22, 2020
+***********/
+
+/*Horizontal navigation bar placed at the top of the page */
+/* Instructions to create a horizontal navigation bar taken from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
+.navbar {
+	display: block;
+  margin-top: 0em;
+  margin-bottom: 0em;
+  margin-right: 0px;
+  margin-left: 0px;
+  padding: 0;
+  position: fixed;
+  width: 100%;
+  background-color: #543005;
+  z-index: 1;
+}
+
+/* Change font and text colour of the navigation bar items to match chosen colour scheme */
+.navbar a {
+	float: left;
+  display: block;
+  font-family:"Verdana", Arial, sans-serif;
+  color: #FFFFFF99;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Active page is white and change inactive link color to white on hover */
+.navbar a.active, .navbar a:hover, .dropdown-content a:hover {
+  color: white;
+}
+
+/* Hide the link that should open and close the topnav on small screens */
+.navbar .icon {
+	display: none;
+  }
+
+ /***********
+Owner: Kristine Luangkhot
+Date: November 28, 2020
+***********/
+
+/* Create a dropdown menu within the main navigation bar */
+/* Instructions taken from https://www.w3schools.com/howto/howto_js_responsive_navbar_dropdown.asp */
+
+  .dropdown {
+	float: left;
+	overflow: hidden;
+	font-size: inherit;
+	border: none;
+	outline: none;
+	color: #FFFFFF99;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+  }
+
+  .dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #8c510a;
+	min-width: 180px;
+	z-index: 1;
+	top: 100%;
+  }
+
+  .dropdown-content a {
+	float: none;
+	color:  #FFFFFF99;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+  }
+  .dropdown:hover .dropdown-content {
+	display: block;
+  }
+
+/**********
+Owner: Kristine Luangkhot
+Creation Date: November 30, 2020
+**********/
+
+/* Create a slideshow of images where all images are positioned in the same place */
+ .photogallery{
+	position:relative;
+	}
+.photogallery img{
+	display:none;
+	position:relative;
+	top:auto;
+	left:0;
+	}
+.photogallery img.activeimage{
+	display:block;
+	top:auto;
+	}
+
+.section-text {
+	margin-left: 2em;
+	margin-right: 2em;
+}
+
+.page-title {
+	text-align: center;
+	padding-top: 170px;
+	color: white;
+	font-size: 30pt;
+}
+
+/* Background image available at https://commons.wikimedia.org/wiki/File:Washington_topographic_map-fr.svg#file */
+#cartography-header {
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url(../images/cartography/washington_topographic_map.png);
+	min-height: 400px;
+}
+
+/* Background image available at https://pixabay.com/photos/space-universe-satellite-2302571/ */
+#remotesensing-header {
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url(../images/remotesensing-header.jpg);
+	min-height: 400px;
+}
+
+/* Create a line to visually separate lines of text */
+.mainline {
+	height:1px; 
+	background: rgb(78, 84, 90);
+	width: 100%;
+	text-align: left;
+	margin-bottom: 3em;
+	padding-left: 50px;
+	display: block;
+}
+
+.mainline a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.mainline a:hover {
+	text-decoration: underline;
+}
+/***********
+End Owner: Kristine Luangkhot
+***********/
+
+/***********
+Owner: Andrea Reid
+Date: Nov 23, 2020 - Dec 6, 2020
+Source: Parallax effect from https://www.w3schools.com/howto/howto_css_parallax.asp
+***********/
+
+/* Apply style to header section with background image and text */
+.main-header {
+	background-image: url("../images/satellite-placeholder.jpg");
+	min-height: 500px;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+/* Source for gradient from https://www.w3schools.com/css/css3_gradients.asp*/
+#sa-header {
+	background-image: url("../images/WorlHillsideBasemap_Calanda.png");
+	min-height: 400px;
+}
+
+.header-overlay {
+	color: white;
+	height: 500px;
+}
+
+/*Source for gradient from https://www.w3schools.com/css/css3_gradients.asp*/
+.header-overlay-gradient {
+	background-image: linear-gradient(45deg, black, transparent);
+    opacity: 0.90;
+}
+
+.header-title {
+	width: 60%;
+	margin-top: 0px;
+	margin-left: 50px;
+	padding-top: 150px;
+	color: white;
+	font-size: 30pt;
+}
+.blurb-text {
+	width: 60%;
+	margin-top: 20px;
+	margin-left: 50px;
+	margin-right: auto;
+	color: white;
+	font-size: 14pt;
+}
+
+.txt-align {
+	text-align: left;
+}
+
+/* apply style to sections with two columns, like 'Who we are' section */
+.section-style-2col {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* apply to sections with four columns, like 'Team' section */
+.section-style-4col {
+	padding: 20px;
+	text-align: center;
+}
+
+/* Allows flexibility in changing the background colour to grey for each section */
+.background-grey {
+	background-color: #f5f5f5;
+}
+
+/* Set width to 100% so that it does not extend past section border at smaller screen size */
+.img-width {
+	width: 100%;
+}
+
+/* Align top margin of text in first column to top of image in second column */
+.top-align {
+	text-align: center;
+	margin-top: 0px;
+	font-size: 16pt;
+}
+
+.credits {
+	font-size: 8pt;
+    font-style: italic;
+}
+
+/* Format photos as circles */
+img.circle {display: block;
+	border-radius: 50%;
+	max-width:100%;
+	margin-top:0px;
+	margin-bottom:30px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 15px;
+}
+
+/* Format buttons on Spatial Analysis page*/
+.sa-button-style {
+    padding: 15px;
+    background-color: #4CAF50;
+    text-align: center;
+    color: white;
+    float: none;
+}
+/***********
+ End Owner: Andrea Reid
+ ************/
+/**********
+	Owner: Christopher Webb
+	Creation Date: December 1, 2020
+**********/
+/** Footer at the bottom of the page formating the bar and text. **/
+
+.footer-style {
+	width: 100%;
+	height: 50px;
+	background-color: #543005;
+}
+
+.footer-text {
+	font-family:"Verdana", Arial, sans-serif;
+	color: white;
+	font-size: 12pt;
+	padding-left: 10px;
+	padding-top: 15px;
+	margin: 0px;
+}
+
+/* css for the image click through. I found help with this from the source
+https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_lightbulb */
+
+nav > button {
+	padding: 15px 32px;
+	text-align: left;	
+	border: none;
+	font-size: 12pt;
+	background-color: lightgrey
+}
+
+button:hover {
+	color: grey;
+}
+
+nav.sidebar {
+	height: 100%;
+	width: 100%;
+	background-color: lightgray;
+	
+}
+/** This was used from the visual light spectrum image as it needed some specific css**/
+#visualLight {
+	max-width: 800px;
+	vertical-align: top;
+	display: inline-block;
+}
+
+/** Changing the main image on the careers page**/
+
+#careers-header {
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.1)), url(../images/Lookout.jpg);
+	min-height: 400px;
+}
+
+/** Back to top button. Resources used: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+This button when click will shift the screen back to the top of the page. **/
+#scrollbutton {
+  position: sticky; /* sticky position because scroll was iffy*/
+  float: right;
+  bottom: 30px; 
+  right: 30px; 
+  background-color: #543005; 
+  color: white; 
+  cursor: pointer; 
+  border-radius: 5px; 
+  font-size: 18px; 
+  margin-top: 12px;
+}
+
+#scrollbutton:hover {
+  background-color: #555;
+}
+
+/**********
+	End Owner: Christopher Webb
+**********/
+
+/***********
+Owner: Corwan Groux
+Date: November 24, 2020
+***********/
+/* Taken from https://www.w3schools.com/css/css_rwd_mediaqueries.asp
+Styles for small devices (phones and narrow tablets)
+All additional styles and the additional media queries are our own creation. */
+@media only screen and (min-width: 768px) {
+	.col-1 {width: 8.33%;}
+	.col-2 {width: 16.66%;}
+	.col-3 {width: 25%;}
+	.col-4 {width: 33.33%;}
+	.col-5 {width: 41.66%;}
+	.col-6 {width: 50%;}
+	.col-7 {width: 58.33%;}
+	.col-8 {width: 66.66%;}
+	.col-9 {width: 75%;}
+	.col-10 {width: 83.33%;}
+	.col-11 {width: 91.66%;}
+	.col-12 {width: 100%;}
+	nav.sidebar {height: 430px;}
+	#myImage {height: 430px;}
+	#servicescartography {margin-top: 47px;}
+	.leftcol {
+		width: 50%;
+		text-align: left;
+	}
+	.rightcol {
+		width: 50%;
+		text-align: left;
+	}
+	.section-title {margin-top: 25%;}
+	.scriptingpics {margin: 0%;}
+	.section-style-1col {
+		margin-left: 16.67%;
+		margin-right: 16.67%;
+		text-align: center;
+	}
+}
+
+@media only screen and (min-width: 1080px) {
+	.leftcol {
+		margin-left: 8.34%;
+		width: 41.66%;
+		text-align: left;
+	}
+	.rightcol {
+		margin-right: 8.34%;
+		width: 41.66%;
+		text-align: left;
+	}
+}
+
+@media only screen and (min-width: 1400px) {
+	.leftcol {
+		margin-left: 12.5%;
+		width: 37.5%;
+	}
+	.rightcol {
+		margin-right: 12.5%;
+		width: 37.5%;
+	}
+}
+
+/***********
+End Owner: Corwan Groux
+***********/
+
+/***********
+Owner: Kristine Luangkhot
+Date: November 22, 2020
+***********/
+/* Responsive design: minimize navigation bar and have a hambuger "menu" icon show up at a certain pixel width */
+/* Taken from https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
+/* When the screen is less than 768 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
+@media screen and (max-width: 768px) {
+	.navbar a:not(:first-child), .dropdown {
+		display: none;
+	}
+	.navbar a.icon {
+	  float: right;
+	  display: block;
+	}
+  }
+  
+  /* The "responsive" class is added to the navbar with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
+  @media screen and (max-width: 768px) {
+	.navbar.responsive {position: fixed;}
+	.navbar.responsive a.icon {
+	  position: fixed;
+	  right: 0;
+	  top: 0;
+	}
+	.navbar.responsive a {
+	  float: none;
+	  display: block;
+	  text-align: left;
+	}
+	.navbar.responsive .dropdown {
+		float: none;
+		display: block;
+		width: 100%;
+		text-align: left;
+	}
+	.navbar.responsive .dropdown-content {position: relative;}
+  }
+ /***********
+ End Owner: Kristine Luangkhot
+ ************/
+
