@@ -1,0 +1,101 @@
+<!-- Owner: Kristine Luangkhot -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- The meta tag comes from https://www.w3schools.com/css/css_rwd_viewport.asp -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>GIS Pros - Remote Sensing</title>
+    <script src="js/ourscript.js"></script>
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/stylesheet.css">
+</head>
+<!-- End Owner: Kristine Luangkhot -->
+<body>
+    <!-- Owner: Kristine Luangkhot
+    Creation Date: November 22, 2020-->
+    <header class="col-12 outer-margin">
+        <div class="navbar" id="myTopnav">
+            <a href = "index.html">Home</a>
+            <div class = "dropdown">
+                <!-- Use the <a> element to open the dropdown menu -->
+                <a href = "services.html">Services & Projects</a>
+                <div class = "dropdown-content">
+                    <a href="cartography.html">Cartography</a>
+                    <a href="spatialanalysis.html">Spatial Analysis</a>
+                    <a class = "active" href="remotesensing.html">Remote Sensing</a>
+                    <a href="scripting.html">Tool Scripting</a>
+                </div>
+            </div>
+            <a href = "careers.html">Careers</a>
+            <a href="javascript:void(0);" class="icon" onclick="navBarMin()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+    </header>
+<!-- End Owner: Kristine Luangkhot -->
+<!-- Owner: Christopher Webb
+         Creation Date: November 22, 2020-->
+         <section class="col-12 outer-margin">
+            <div id="remotesensing-header" class="main-header">
+                <h1 class="page-title">Remote Sensing</h1>
+            </div>
+        </section>
+        <!-- This section is the start of the text, it works as an overview to start the reader to understand what the page is about-->
+        <section class="col-12">
+            <div class="col-8 section-style-1col">
+                <h2>The Joys of Spectral Imagery</h2>
+                <p>Remote Sensing allows us to detect objects from afar. Let our Remote Sensing Specialist help you observe areas that may be out of reach.</p>
+            </div>
+        </section>
+        <section class="col-12 section-style-2col background-grey">
+            <div class="col-6">
+                <h3 class="top-align">An Imagery Analysis Tool For Any Job </h3>
+                <p> With spectral imagery there is nothing that can't be analyzed. Orbital satellites give us the ability to detect 
+                    phenomena that are invisible to the human eye. Some of these things include soil moisture content, crop and forest health, the detection of acient ruins
+                    and many, many more. </p>
+            </div>
+            <div class="col-6">
+                <img src="images/Imagerybands.jpg" alt="display of imagery bands" class = "img-width">
+            </div>
+        </section>
+        <!--This section shows the science behind Spectral imagery-->
+        <section class="col-12 section-style-2col background-white">
+            <div class="col-12 outer-margin">
+                <h3 class="top-align">Different Imagery Analysis</h3>
+            </div>   
+            <div>
+                <img src="images/visualLight.jpg" alt="Light Spectrum Bar" class = "col-6 img-width" id="visualLight">
+                <p class="col-6">From the visible light spectrum we see everyday to the rays on either side, we can monitor 
+                    global environmental health. The different frequencies require different imagery bands to be observed, but once collected can 
+                    be used to show a unique display with detailed information.</p>
+            </div>
+        </section> 
+        <section class="col-12 background-grey">  
+            <!-- I look to https://www.w3schools.com/js/tryit.asp?filename=tryjs_intro_lightbulb for help on this section -->
+            <!-- Here there will be a navbar and an image beside it, the user will be able to click through to see different images.-->
+            <h3 class="top-align">Image Gallery</h3>
+            <div class="col-3">
+                <nav class="sidebar">
+                    <button type="button" onclick="document.getElementById('myImage').src='images/Imagerybands.jpg'">Spectral Imagery</button><br>
+                    <button type="button" onclick="document.getElementById('myImage').src='images/TrueColour.jpg'">True Colour Imagery</button><br>
+                    <button type="button" onclick="document.getElementById('myImage').src='images/FalseColour.jpg'">False Colour Imagery</button><br>
+                    <button type="button" onclick="document.getElementById('myImage').src='images/SWIR.jpg'">Short Wave Infrared Imagery</button><br>
+                    <button type="button" onclick="document.getElementById('myImage').src='images/LandClass.jpg'">Calculating Land Class</button> 
+                </nav>
+            </div>
+            <div class="col-9">
+                <img id="myImage" alt="Image" src="images/Imagerybands.jpg" class="img-width"> 
+            </div>    
+        </section>
+<!-- End Owner: Christopher Webb -->
+<!-- Owner: Christopher Webb -->
+<footer class="col-12 outer-margin">
+    <div class="footer-style">
+        <button onclick="topFunction()" id="scrollbutton" title="Go to top"> ^ </button>
+    <p class="footer-text">(c) GIS Pros, Fleming College, 2020</p>
+    </div>
+</footer>
+</body>
+</html>
+<!-- End Owner: Christopher Webb -->
